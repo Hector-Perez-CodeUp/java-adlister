@@ -11,6 +11,8 @@
     <title>Title</title>
 </head>
 <body>
+<%@ include file="partials/navbar.jsp" %>
+
 <form action="/login" method="POST">
     <label for="username">Username</label>
     <input id="username" name="username">
@@ -19,5 +21,6 @@
     <button type="submit">Login</button>
 </form>
 
+<%@ include file="partials/footer.jsp" %>
 </body>
 </html>
