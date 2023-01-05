@@ -1,3 +1,4 @@
+import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -7,7 +8,11 @@ import java.io.PrintWriter;
 
 @WebServlet(name="PizzaOrderServlet", urlPatterns = "/pizza-order")
 public class PizzaOrderServlet extends HttpServlet {
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.getRequestDispatcher("/pizza-form.jsp").forward(request, response);
+    }
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setContentType("text/html");
         String crust = request.getParameter("crust");
         String sauce = request.getParameter("sauce");
         String size = request.getParameter("size");
@@ -19,7 +24,6 @@ public class PizzaOrderServlet extends HttpServlet {
         for (int i = 0; i < topping.length; i++) {
             out.println(topping[i]);
         }
-
         out.println(address);
     }
 }
