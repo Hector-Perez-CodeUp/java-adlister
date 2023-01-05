@@ -12,10 +12,10 @@
 </head>
 <body>
 
-<form action="pick-color" method="POST">
+<form action="/pick-color" method="POST">
     <label for="favColor">Input your favorite color:</label>
     <input id="favColor" name="favColor" type="text"><br>
-    <input type="submit" value="Submit">
+    <button type="submit">Submit</button>
 </form>
 </body>
 </html>
