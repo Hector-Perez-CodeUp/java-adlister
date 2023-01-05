@@ -4,17 +4,29 @@ public class Ad {
     private String title;
     private String description;
 
-    public Ad(long id, long userId, String title, String description) {
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    private double price;
+
+    public Ad(long id, long userId, String title, String description, double price) {
         this.id = id;
         this.userId = userId;
         this.title = title;
         this.description = description;
+        this.price = price;
     }
 
-    public Ad(long userId, String title, String description) {
+    public Ad(long userId, String title, String description, double price) {
         this.userId = userId;
         this.title = title;
         this.description = description;
+        this.price = price;
     }
 
     public long getId() {
